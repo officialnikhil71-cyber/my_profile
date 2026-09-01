@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../code_models/paragraph.dart';
 import '../code_models/textmodels.dart';
@@ -42,7 +41,7 @@ class Project extends StatelessWidget {
                     child: Image.asset(
                       'assets/images/protfo.png',
                       width: 130,
-                      height: 140,
+                      height: 120,
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -87,7 +86,7 @@ class Project extends StatelessWidget {
                     child: Image.asset(
                       'assets/images/music.png',
                       width: 130,
-                      height: 140,
+                      height: 120,
                       fit: BoxFit.contain,
                     ),
                   ),

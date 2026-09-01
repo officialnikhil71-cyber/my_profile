@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../code_widgets/simplecontainer.dart';
+import '../code_models/colorfultext.dart';
 import '../code_models/textmodels.dart';
-import '../code_widgets/linkButtons.dart';
-import '../code_widgets/givecontainers.dart';
 import '../screens/aboutme.dart';
+import '../code_widgets/giveOVERVIEW.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -11,121 +10,121 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF4F6F8),
+      backgroundColor: const Color.fromARGB(255, 255, 254, 252),
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.black,
-        title: const Text(
-          "MY PORTFOLIO",
-          style: TextStyle(
-            color: Colors.redAccent,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.2,
-          ),
-        ),
+        backgroundColor: const Color.fromARGB(255, 255, 254, 252),
+        title: Textmodels(note: 'MY PORTFOLIO', sx: 22),
+        centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 35, left: 16, right: 16),
+      body: SafeArea(
         child: ListView(
+          padding: EdgeInsets.only(top: 20, right: 15, left: 15),
           children: [
-            MakeContainer(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(
-                      'assets/images/image1.jpg',
-                      height: 140,
-                      width: 130,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Hello, I am',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          'NIKHIL KUMAR',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 121, 85, 72),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          'Passionate Flutter Developer building beautiful, functional, and user-friendly mobile applications.',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 130, 120, 125),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 12.5,
-                            height: 1.35,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 35),
-            Textmodels(note: 'OVERVIEW', sx: 20),
-            const SizedBox(height: 15),
-
-            SimpleContainer(
-              child: Align(
-                // alignment: AlignmentGeometry.center,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+            Column(
+              children: [
+                Row(
                   children: [
-                    Textmodels(note: 'QUALIFICATION ', sx: 18),
-                    Textmodels(note: 'senior scondary passout', sx: 14),
-                    const SizedBox(height: 8),
-                    Divider(height: 4, color: Colors.white),
-                    const SizedBox(height: 5),
-                    Textmodels(note: 'EXPERIENCE ', sx: 18),
-                    Textmodels(note: 'Known Basics of programming', sx: 14),
-                    Divider(height: 4, color: Colors.white),
-                    const SizedBox(height: 5),
-                    Textmodels(note: 'PROJECTS ', sx: 18),
-                    Textmodels(note: 'Working..', sx: 14),
-                    Divider(height: 4, color: Colors.white),
-                    const SizedBox(height: 5),
-                    Textmodels(note: 'CURRENT STATUS ', sx: 18),
-                    Textmodels(note: 'Btech 3rd Semester', sx: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Colorfultext(
+                              color: Colors.brown,
+                              note: '''Hello I'm''',
+                              sx: 15,
+                              gt: FontWeight.w400),
+                          SizedBox(height: 10),
+                          Textmodels(note: 'NIKHIL KUMAR', sx: 26),
+                          SizedBox(height: 10),
+                          Textmodels(note: 'Flutter Developer', sx: 16),
+                          SizedBox(height: 20),
+                          Textmodels(
+                              note:
+                                  '''I build clean, efficient and user-friendly mobile applicatons.''',
+                              sx: 13),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: const Color.fromARGB(255, 232, 230, 230),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Image.asset('assets/images/image1.jpg',
+                            width: 150, height: 150, fit: BoxFit.cover),
+                      ),
+                    )
                   ],
+                ),
+              ],
+            ),
+            SizedBox(height: 50),
+            Container(
+              margin: const EdgeInsets.only(right: 240),
+              height: 32,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.redAccent,
+              ),
+              child: Center(
+                child: Text(
+                  'ExPlore PortFolio ->',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
             ),
-            const SizedBox(height: 30),
-            ListTile(
-              title: Text('ABOUT ME'),
-              subtitle: Text('you can get more information '),
-              trailing: IconButton(
-                iconSize: 40,
-                icon: Icon(Icons.chevron_right_outlined),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Aboutme()),
-                  );
-                },
-                color: Colors.greenAccent,
+            SizedBox(height: 20),
+            Container(
+              width: double.infinity,
+              color: Colors.transparent,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24,
+                vertical: 8,
+              ),
+              child: const Text(
+                "Why Flutter?\n"
+                "I enjoy using Flutter to build beautiful, fast and "
+                "cross-platform mobile applications while continuously "
+                "learning and experimenting with new ideas.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color(0xFF806A5B),
+                  fontSize: 15,
+                  height: 1.5,
+                ),
               ),
             ),
-            const SizedBox(height: 40),
-            const Linkbuttons(),
+            SizedBox(height: 10),
+            Giveoverview(),
+            SizedBox(height: 30),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Colors.redAccent)),
+              child: ListTile(
+                leading: Icon(
+                  Icons.person_2_outlined,
+                  color: Colors.redAccent,
+                  size: 28,
+                ),
+                title: Text('ABOUT ME'),
+                subtitle: Text('you can get more information '),
+                trailing: IconButton(
+                  iconSize: 40,
+                  icon: Icon(Icons.chevron_right_outlined),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Aboutme()),
+                    );
+                  },
+                  color: Colors.greenAccent,
+                ),
+              ),
+            ),
           ],
         ),
       ),
