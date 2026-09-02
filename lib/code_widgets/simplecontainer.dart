@@ -1,30 +1,5 @@
-// import 'package:flutter/material.dart';
 
-// class Simplecontainer extends StatelessWidget {
-//   final Widget child;
 
-//   const Simplecontainer({super.key, required this.child});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return AnimatedContainer(
-//       decoration: BoxDecoration(
-//         borderRadius: BorderRadius.circular(15),
-//         color: const Color.fromARGB(235, 236, 235, 235),
-//         boxShadow: [
-//           BoxShadow(
-//             color: Colors.black,
-//             blurRadius:BorderSide.strokeAlignOutside,
-//             spreadRadius: BorderSide.strokeAlignCenter,
-//           )
-//         ],
-//         border: Border.all(color: Colors.white),
-//       ),
-//       duration: Duration(milliseconds:300 ),
-//       child: child,
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 
 class SimpleContainer extends StatefulWidget {
