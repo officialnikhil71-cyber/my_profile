@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class SimpleContainer extends StatefulWidget {
@@ -32,9 +30,7 @@ class _SimpleContainerState extends State<SimpleContainer> {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: _isPressed
-              ? const Color(0xFFE0E0E0)
-              : const Color(0xFFECEBEB),
+          color: _isPressed ? const Color(0xFFE0E0E0) : const Color(0xFFECEBEB),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(_isPressed ? 0.1 : 0.2),
